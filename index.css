@@ -1,0 +1,605 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #fff;
+}
+
+html,body{
+	overflow-x: hidden;
+}
+
+/*============================ Slider ====================*/
+
+/* slider image container */
+
+.slider_container{
+	position: relative;
+	min-height: 99vh;
+	overflow: hidden;
+}
+
+.slider_main1,.slider_main2,.slider_main3,.slider_main4{
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+}
+
+/* slider images for animation */
+.slider_img{
+	width: 120%;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	animation: zoom-out 3s linear infinite;
+}
+
+/* for zoom out animation effect */
+@keyframes zoom-out {
+	100%{
+		width: 100%;
+	}	
+}
+
+/* text animation effects */
+
+.slider_text{
+	width: 1000px;
+	padding-left: 7%;
+	padding-top: 7px;
+	position: absolute;
+	top: 180px;
+	left: 100px;
+	animation: textup 12s linear infinite;
+	transform: translateY(100px);
+}
+
+/* text class for center a text image */
+.true{
+	padding-left: 10%;
+}
+
+/* text up animation effect */
+@keyframes textup{
+	10%{
+		transform: translateY(0px);	
+	}
+}
+
+/* slider zoom in and animation effect */
+.slider_main1{
+	animation: slide1 12s linear infinite;
+}
+
+.slider_main2{
+	animation: slide2 12s linear infinite;
+}
+.slider_main3{
+	animation: slide3 12s linear infinite;
+}
+.slider_main4{
+	animation: slide4 12s linear infinite;
+}
+@keyframes slide1 {
+	0%{
+		visibility: visible;
+	}
+	25%{
+		visibility: hidden;
+	}
+	50%{
+		visibility: hidden;
+	}
+	75%{
+		visibility: hidden;
+	}
+	100%{
+		visibility: visible;
+	}
+}
+
+@keyframes slide2 {
+	0%{
+		visibility: hidden;
+	}
+	25%{
+		visibility: hidden;
+	}
+	50%{
+		visibility: visible;
+	}
+	75%{
+		visibility: hidden;
+	}
+	100%{
+		visibility: hidden;
+	}
+}
+
+@keyframes slide3 {
+	0%{
+		visibility: hidden;
+	}
+	25%{
+		visibility: hidden;
+	}
+	50%{
+		visibility: hidden;
+	}
+	75%{
+		visibility: visible;
+	}
+	100%{
+		visibility: hidden;
+	}
+}
+
+@keyframes slide4 {
+	0%{
+		visibility: hidden;
+	}
+	25%{
+		visibility: hidden;
+	}
+	50%{
+		visibility: hidden;
+	}
+	75%{
+		visibility: hidden;
+	}
+	100%{
+		visibility: visible;
+	}
+}
+
+/* navigation bar */
+
+.nav a{
+	text-decoration: none;
+	color: white;
+	font-size: 17px;
+	margin-right: 80%;
+	font-family: "CCBithead-Bark";
+	font-weight: bold;
+	position: relative;
+}
+
+/* nav bar hover effect */
+.header a:hover{
+	text-decoration: underline;
+	color: orange;
+}
+
+.header{
+	display: flex;
+	position: relative;
+	width: 20%;
+}
+
+.nav{
+	margin-left: 6%;
+	min-width:20%;
+	margin-top: 70px;
+	display: flex;
+}
+
+.btn button{
+	border: 1px solid white;
+	background-color: transparent; 
+	color: white;
+	font-family: "CCBithead-Bark";
+	font-size: 19px;
+	padding: 4%;
+	font-weight: bold;
+	min-height: 50px;
+	min-width: 26%;
+	cursor: pointer;
+}
+
+.btn button:hover{
+	color: orange;
+	border: 1px solid orange;
+}
+
+.nav a button{
+	margin-top: -20px;
+}
+
+.header .name h3{
+	color: aliceblue;
+	position: relative;
+	font-size: 46px;
+	font-family: "CCMonsterMash";
+	width: 55vw;
+	-webkit-text-stroke-width: 0.0005px;
+	-webkit-text-stroke-color:white;
+	color: orange;
+	padding: 6%;
+}
+
+/*======================= Menu ======================*/
+
+.menu{
+	min-height: 50vh;
+}
+
+.menu-text{
+	text-align: center;
+	padding-top: 5%;
+	font-size: 25px;
+	font-family: "Corbel";
+	color: #4d4d4d;
+}
+
+.menu-text hr{
+	margin-left: 38%;
+	margin-right: 38%;
+	margin-top: 15px;
+	border-top: 2px solid #ed7422;
+}
+
+.mood h1{
+	text-align: center;
+	font-size: 80px;
+	margin-top: 30px;
+	font-family: "Chancery";
+	color: #4d4d4d;
+}
+
+.feeling h3{
+	text-align: center;
+	font-size: 28px;
+	font-family: "Corbel";
+	margin-top: 2rem;
+	color: #4d4d4d;
+}
+
+/*======================== Dishes =====================*/
+
+.wrapper{
+	display: flex;
+	width: 90%;
+	padding-top: 5rem;
+	justify-content: space-around;
+	margin-left: 3rem;
+}
+
+.card{
+	min-width: 30%;
+	height: 300px;
+	margin-left: 4rem;
+	padding: 5rem;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	transition: 0.4s ease-out;
+}
+	.card:hover{
+		transform: translateY(20px);
+	}
+	.card:hover:before{
+		opacity:1;
+	}
+
+
+.card:hover .info{
+	opacity: 1;
+	transform: translateY(0px);
+}
+.card:before{
+	content: "";
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;;
+	height: 100%;
+	background: rgb(0,0,0,0.6);
+	z-index: 2;
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.card img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card .info{
+	position: relative;
+	z-index: 3;
+	color: white;
+	opacity: 0;
+	transform: translateY(0px);
+	transition: 0.5s;
+}
+
+.card .info h1{
+	letter-spacing: 2px;
+	font-size: 26px;
+	margin-top: -4%;
+	padding: 1%;
+	font-family: sans-serif;
+	width: 100%;
+}
+	
+.info p{
+	letter-spacing: 1px;
+	font-size: 16px;
+	font-family: sans-serif;
+	margin-top: 8px;
+}
+
+.card .info button {
+	padding: 0.6rem;
+	margin-left: 27%;
+	width: 60%;
+	margin-top: 8%;
+	border-radius: 3px;
+	background: white;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.4s ease;
+  }
+  .card .info button:hover {
+	background: dodgerblue;
+	color: white;
+  }
+		
+/*====================== PARTIES ======================*/
+
+.parties{
+	display: flex;
+}
+
+.parties1{
+	width: 50%;
+}
+
+.parties1 img{
+	width: 100%;
+	padding: 5rem;
+}
+
+.parties2{
+	width: 50%;
+	text-align: center;
+	padding-top: 10%;
+}
+
+.parties2 h1{
+	font-size: 50px;
+	font-family: "Algerian";
+	color: #4d4d4d;
+}
+
+.parties2 p{
+	font-size: 20px;
+	font-family: sans-serif;
+	color: #4d4d4d;
+	padding-right: 10%;
+}
+
+.parties2 button{
+	width: 20%;
+	height: 15%;
+	font-size: 18px;
+	font-family: "Berlin Sans FB";
+	text-decoration: none;
+	background-color: #716e6e;
+	margin-right: 10%;
+	border-radius: 20%;
+}
+
+.parties2 button a{text-decoration: none;color: white;}
+
+/*==================== COCKTAIL ====================*/
+
+#cocktail{margin-top: -6%;}
+#cocktail1{padding-left: 5%;}
+
+/*===================== MAP ========================*/
+
+.map{
+	width: 100%;
+}
+
+/*==================== Footer =======================*/
+
+.footer{
+	background-color: black;
+	min-height: 20vh;
+	color: white;
+	padding:3%;
+	padding-left: 8%;
+	display: flex;
+}
+
+.Dfooter{
+	width: 90%;
+}
+
+.logo{
+	font-size: 46px;
+	font-family: "CCMonsterMash";
+	-webkit-text-stroke-width: 0.0005px;
+	-webkit-text-stroke-color:white;
+	color: orange;
+	width: 40%;
+}
+
+.footer hr{
+	margin-right: 10%;
+}
+
+.fnav a{
+	text-decoration: none;
+	margin: 1.1%;
+	color: white;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+.details{display: flex;}
+.location{margin-left: 1%;}
+.phone{margin-left: 5%;}
+.mail{margin-left: 5%;}
+
+/*======================= DRINKS PAGE ==================*/
+.navbar{
+	background-color: #1e1219;
+	height: 15vh;
+	padding: -9rem;
+	margin-top: -10px;
+}
+
+.special-drinks{padding-top: 4%;}
+
+.special-drinks h1{
+	font-size: 80px;
+	font-family: "Hog Bold - HMK";
+	color: #aa4912;
+}
+
+.special-drinks h3{
+	font-size: 35px;
+	font-family: "Lucida Calligraphy";
+}
+
+.special-drinks p{
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+.card .info .drinks-ji{
+	width: 190%;
+	margin-left: 10%;
+}
+
+.drinks .wrapper .card img{border-radius: 6%;}
+.drinks .wrapper .card::before{border-radius: 6%;}
+
+/*================== ABOUT PAGE ====================*/
+
+.resturant_img img{
+	max-width: 100%;
+	padding-left: 9%;
+	padding-top: 1%;
+}
+
+.about{
+	padding-top: 2%;
+	font-family: "BixAntiqueScriptHmkBold";
+}
+
+#chief-1{margin-left: 3.5%;}
+#chef1-about{margin-right: 5%;}
+#chef-2{margin-right: 3.5%;margin-top: -6%;}
+#chef2-about{margin-left: 8%;}
+
+/*==================== RESERVATION ===================*/
+
+.reservation{text-align: center;}
+.box{padding-top: 9%;}
+
+.box h1{
+	color:seagreen;
+}
+
+.box hr{
+	margin-left: 40%;
+	margin-right: 40%;
+	border-top: 2px solid seagreen;
+}
+
+.box input{
+	min-width: 50%;
+	height: 37px;
+	padding-left: 1.5%;
+	border: 1px solid black;
+	margin-top: 2.5%;
+	font-weight: bold;
+}
+
+.box button{
+	min-width: 9%;
+	height: 40px;
+	text-decoration: none;
+	background-color: #1e1219;
+	border: none;
+	margin-top: 3%;
+	margin-left: 2%;
+}
+
+a{
+	text-decoration: none; 
+	color:white;
+	font-weight: bold;
+}
+
+#tasty{margin-top: -2%;}
+#menuji{margin-top: 18%;}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:600px) {
+	.slider_main1,.slider_main2,.slider_main3,.slider_main4{
+		height: 40vh;
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.slider_text img{
+		display: none;
+	}
+
+	.header a{
+		font-size: 8px;
+		margin-left: 4%;
+	}
+
+	.nav{
+		margin-left: 3%;
+		width: 100%;
+		margin-top: 20px;
+	}
+
+	.btn button{
+		font-size: 8px;
+		font-weight: bold;
+		min-height: 20px;
+		min-width: 1%;
+	}
+
+	.wrapper{display: block;}
+	.card{width: 90%;margin-top: 5%;}
+	.card img{margin-left: -25%;}
+
+	.parties{display: block;width: 100vh;}
+	.parties2{text-align: center;width: 50vh;margin-left: 4%;}
+	.parties2 p{margin-left: 9%;text-align: justify;}
+	.parties1{justify-content: center;}
+}
+
+
+
+
+
+
